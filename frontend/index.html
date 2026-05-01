@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gyaanuday - Smart Project Sharing Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <header class="top-nav glass">
+      <a class="brand" href="#landing">
+        <span class="brand-dot"></span>
+        <span>Gyaanuday</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#explore">Explore</a>
+        <a id="authNavLink" href="#auth">Login</a>
+        <button id="logoutNavBtn" class="btn btn-secondary nav-logout hidden" type="button">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="landing" class="page section active">
+        <div class="hero glass reveal">
+          <p class="eyebrow">SMART PROJECT SHARING PLATFORM</p>
+          <h1>
+            Build, share, and discover projects with
+            <span class="gradient-text">AI-powered insights</span>.
+          </h1>
+          <p class="lead">
+            A premium collaboration space for students, creators, and innovators.
+            Curate your work, connect with peers, and elevate every idea.
+          </p>
+          
+          <div class="platform-stats reveal">
+            <div class="stat-item">
+              <span id="statProjectsCount">...</span>
+              <p>Projects Shared</p>
+            </div>
+            <div class="stat-item">
+              <span id="statUsersCount">...</span>
+              <p>Active Users</p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#explore" class="btn btn-primary">Explore Projects</a>
+            <a href="auth.html" class="btn btn-secondary">Upload Yours</a>
+          </div>
+        </div>
+
+      </section>
+      
+      <section id="explore" class="page section">
+        <div class="section-head reveal">
+          <h2>Explore Projects</h2>
+          <p>Discover trending innovations with instant smart filters.</p>
+        </div>
+
+        <div class="explore-controls glass reveal">
+          <div class="search-wrap">
+            <span>🔍</span>
+            <input id="searchInput" type="text" placeholder="Search projects, technologies, domains..." />
+          </div>
+          <div class="chips">
+            <button class="chip active" type="button" data-filter="all">All</button>
+            <button class="chip" type="button" data-filter="ai">AI</button>
+            <button class="chip" type="button" data-filter="web">Web</button>
+            <button class="chip" type="button" data-filter="iot">IoT</button>
+            <button class="chip" type="button" data-filter="popular">Popularity</button>
+          </div>
+        </div>
+
+        <div id="skeletonGrid" class="project-grid skeleton-grid">
+          <div class="skeleton-card glass"></div>
+          <div class="skeleton-card glass"></div>
+          <div class="skeleton-card glass"></div>
+          <div class="skeleton-card glass"></div>
+          <div class="skeleton-card glass"></div>
+          <div class="skeleton-card glass"></div>
+        </div>
+
+        <div id="projectGrid" class="project-grid hidden"></div>
+      </section>
+    </main>
+
+    <div id="projectModal" class="project-modal hidden" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-modal="true"></div>
+      <article class="project-modal-card glass" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button id="projectModalClose" type="button" class="project-modal-close" aria-label="Close project details">
+          ×
+        </button>
+        <p id="projectModalTag" class="project-modal-tag"></p>
+        <h3 id="projectModalTitle"></h3>
+        <p id="projectModalSummary" class="project-modal-summary"></p>
+        <div id="projectModalContent" class="project-modal-content"></div>
+        <div class="modal-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+          <a id="projectModalDownload" href="#" class="btn btn-primary" download style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>📥</span> Download Innovation
+          </a>
+        </div>
+      </article>
+    </div>
+
+
+    <div id="toastStack" class="toast-stack"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

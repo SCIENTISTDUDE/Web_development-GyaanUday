@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup - Gyaanuday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .auth-container {
+        width: 100%;
+        max-width: 440px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <div class="auth-container">
+      <a class="brand" href="index.html" style="margin-bottom: 30px; justify-content: center;">
+        <span class="brand-dot"></span>
+        <span>Gyaanuday</span>
+      </a>
+
+      <div class="auth-wrap glass">
+        <div class="auth-toggle">
+          <button class="tab active" data-mode="login">Login</button>
+          <button class="tab" data-mode="signup">Signup</button>
+        </div>
+        <form id="authForm" class="auth-form">
+          <h2 id="authTitle">Welcome Back</h2>
+          <p id="authStatusMessage" class="auth-status-message hidden"></p>
+          <label>
+            Email
+            <input id="authEmail" type="email" required placeholder="you@example.com" />
+          </label>
+          <label id="nameField" class="hidden">
+            Name
+            <input id="authName" type="text" placeholder="Your full name" />
+          </label>
+          <label>
+            Password
+            <input id="authPassword" type="password" required placeholder="••••••••" />
+          </label>
+          <button id="authSubmitBtn" class="btn btn-primary" type="submit">Login</button>
+        </form>
+      </div>
+      
+      <p style="text-align: center; margin-top: 24px; color: var(--text-secondary);">
+        Back to <a href="index.html" class="gradient-text">Home</a>
+      </p>
+    </div>
+
+    <div id="toastStack" class="toast-stack"></div>
+    <script src="script.js"></script>
+    <script>
+      // Initialize auth specific UI state if needed
+      document.addEventListener('DOMContentLoaded', () => {
+          // The main script.js handles setupAuth if the elements exist
+          // Since we are reusing script.js, it will bind the events.
+          // We just need to make sure updateAuthNavUI doesn't redirect improperly.
+      });
+    </script>
+  </body>
+</html>
